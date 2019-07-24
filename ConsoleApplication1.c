@@ -4,12 +4,8 @@
 # include <fcntl.h>
 #include <io.h>
 #include <math.h>
+#include "ft_list.h"
 
-typedef struct
-{
-	int size;
-	char** field;
-} s_field;
 
 char* create_dot_str(int size)
 {
@@ -40,7 +36,7 @@ void field_create(s_field* field, int size)
 	{
 		field->field[i] = create_dot_str(size);
 	}
-	field->field[size] = '\0';
+	field->field[size] = "";
 	field->size = size;
 }
 void field_delete(s_field* field)
@@ -62,18 +58,6 @@ void field_resize(s_field* field, int size)
 	field_delete(field);
 	field_create(field, size);
 }
-typedef struct
-{
-	char* form;
-	int width;
-	int height;
-} s_tetromin;
-
-typedef struct tetr_arr
-{
-	s_tetromin tetromin_data;
-	struct tetr_arr *next;
-} s_tetr_arr;
 
 int tetr_can_insert(const s_tetromin *tetromin, int y, int x, const s_field *field)
 {
@@ -139,7 +123,7 @@ void field_print(const s_field *field)
 	}
 }
 
-int try_solve(s_field *field, const s_tetr_arr *tetr_arr)
+int try_solve(s_field *field, const s_tetr_list *tetr_arr)
 {
 	if (tetr_arr == NULL)
 		return 1;
@@ -175,7 +159,7 @@ double find_sqrt(int num)
 	return g;
 }
 
-void find_solution(const s_tetr_arr *tetr_arr, int size_arr)
+void find_solution(const s_tetr_list *tetr_arr, int size_arr)
 {
 	s_field field;
 	int size = find_sqrt(size_arr * 4);
@@ -207,7 +191,7 @@ void find_solution(const s_tetr_arr *tetr_arr, int size_arr)
 
 Создать структуру (односвязный список), которая будет хранить с_тетромино
 */
-
+/*
 int main(void)
 {
 //	printf("begin");
@@ -234,3 +218,4 @@ int main(void)
 
 	return 0;
 }
+*/
