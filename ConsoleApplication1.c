@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 # include <fcntl.h>
-#include <io.h>
 #include <math.h>
 #include "ft_list.h"
 

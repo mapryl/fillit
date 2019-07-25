@@ -42,7 +42,7 @@ char* to_letter(char* line, int w_arr[], int width, int h_arr[], int hight)
 
 	while (line[i])
 	{
-		if (line[i] == '.' && w_arr[i % 5] == 1 && h_arr[i / 5] == 1 || line[i] == '#')
+		if ((line[i] == '.' && w_arr[i % 5] == 1 && h_arr[i / 5] == 1) || line[i] == '#')
 		{
 			new_line[j] = line[i];
 			j++;
@@ -52,7 +52,7 @@ char* to_letter(char* line, int w_arr[], int width, int h_arr[], int hight)
 	return new_line;
 }
 
-s_tetromin   *create_tetrimino(char *tetromin)
+s_tetromin   *create_tetrimino(char *tetromin, int figure_counter)
 {
     s_tetromin *tetromin_head;
 
@@ -74,6 +74,13 @@ s_tetromin   *create_tetrimino(char *tetromin)
 		i++;
 	}
 	tetromin = to_letter(tetromin, w_arr, width, h_arr, hight);
+	i = 0;
+	while (tetromin[i])
+	{
+		if (tetromin[i] == '#')
+			tetromin[i] = 'A' + figure_counter;
+		i++;
+	}
 	tetromin_head->form = tetromin;
     tetromin_head->width = width;
     tetromin_head->height = hight;
