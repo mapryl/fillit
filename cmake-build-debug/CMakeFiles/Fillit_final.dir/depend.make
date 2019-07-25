@@ -17,7 +17,6 @@ CMakeFiles/Fillit_final.dir/h_count.c.o: ../h_count.c
 CMakeFiles/Fillit_final.dir/main.c.o: ../ft_list.h
 CMakeFiles/Fillit_final.dir/main.c.o: ../main.c
 
-CMakeFiles/Fillit_final.dir/w_count.c.o: ../ft_list.h
 CMakeFiles/Fillit_final.dir/w_count.c.o: ../w_count.c
 
 CMakeFiles/Fillit_final.dir/сheck_file.c.o: ../сheck_file.c

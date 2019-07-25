@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-# include <fcntl.h>
+#include <fcntl.h>
 #include <math.h>
 #include "ft_list.h"
 

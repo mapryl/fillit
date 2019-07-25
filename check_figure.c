@@ -1,10 +1,32 @@
-#include <stdio.h> //Убрать вместе с printf при оформлении
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_figure.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/25 17:32:20 by mflannel          #+#    #+#             */
+/*   Updated: 2019/07/25 18:16:55 by mflannel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int check_figure(char* line)
+int		return_value(int touch)
 {
-	int touch = 0; //количество касаний
-	int hcount = 0; //количество проверенных шарпов
-	int i = 0; //счетчик
+	if (touch == 6 || touch == 8)
+		return (1);
+	else
+		return (0);
+}
+
+int		check_figure(char *line)
+{
+	int touch;
+	int hcount;
+	int i;
+
+	touch = 0;
+	hcount = 0;
+	i = 0;
 	while (hcount < 4)
 	{
 		while (line[i] != '#')
@@ -20,9 +42,5 @@ int check_figure(char* line)
 		hcount++;
 		i++;
 	}
-	printf("Number of touches: %d\n", touch); //Вывод "касаний"
-	if (touch == 6 || touch == 8)
-		return (1);
-	else
-		return (0);
+	return (return_value(touch));
 }

@@ -20,6 +20,8 @@ math.h
 ft_list.h
 /Users/mflannel/Desktop/Fillit_final/ft_list.h
 
+/Users/mflannel/Desktop/Fillit_final/check_figure.c
+
 /Users/mflannel/Desktop/Fillit_final/create_list.c
 ft_list.h
 /Users/mflannel/Desktop/Fillit_final/ft_list.h
@@ -40,6 +42,8 @@ stdlib.h
 fcntl.h
 -
 
+/Users/mflannel/Desktop/Fillit_final/h_count.c
+
 /Users/mflannel/Desktop/Fillit_final/main.c
 ft_list.h
 /Users/mflannel/Desktop/Fillit_final/ft_list.h
@@ -49,8 +53,4 @@ unistd.h
 -
 
 /Users/mflannel/Desktop/Fillit_final/w_count.c
-ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
-string.h
--
 
