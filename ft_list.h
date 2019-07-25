@@ -4,6 +4,7 @@
 #   include <unistd.h>
 #   include <stdio.h>
 #   include <stdlib.h>
+#   include <string.h> //!!!Убрать перед сдачей
 //#   include "Libft/includes/libft.h"
 #   include <fcntl.h>
 

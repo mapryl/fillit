@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug"/>
+				<Option working_dir="/Users/mapryl/Desktop/fillit/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug"/>
+				<Option working_dir="/Users/mapryl/Desktop/fillit/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug"/>
+				<Option working_dir="/Users/mapryl/Desktop/fillit/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Fillit_final">
-				<Option output="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Fillit_final" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug"/>
+				<Option output="/Users/mapryl/Desktop/fillit/cmake-build-debug/Fillit_final" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mapryl/Desktop/fillit/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mflannel/Desktop/Fillit_final/."/>
+					<Add directory="/Users/mapryl/Desktop/fillit/."/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
@@ -54,20 +54,20 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fillit_final"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fillit_final"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Fillit_final/fast">
-				<Option output="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Fillit_final" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/mflannel/Desktop/Fillit_final/cmake-build-debug"/>
+				<Option output="/Users/mapryl/Desktop/fillit/cmake-build-debug/Fillit_final" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mapryl/Desktop/fillit/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mflannel/Desktop/Fillit_final/."/>
+					<Add directory="/Users/mapryl/Desktop/fillit/."/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
@@ -77,44 +77,44 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fillit_final/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fillit_final/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mapryl/Desktop/fillit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/ConsoleApplication1.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/ConsoleApplication1.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/check_figure.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/check_figure.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/create_list.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/create_list.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/create_tetrimino.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/create_tetrimino.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/ft_list.h">
+		<Unit filename="/Users/mapryl/Desktop/fillit/ft_list.h">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/h_count.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/h_count.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/main.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/main.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/text.txt">
+		<Unit filename="/Users/mapryl/Desktop/fillit/text.txt">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/w_count.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/w_count.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/сheck_file.c">
+		<Unit filename="/Users/mapryl/Desktop/fillit/сheck_file.c">
 			<Option target="Fillit_final"/>
 		</Unit>
-		<Unit filename="/Users/mflannel/Desktop/Fillit_final/CMakeLists.txt">
+		<Unit filename="/Users/mapryl/Desktop/fillit/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
