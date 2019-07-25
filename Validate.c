@@ -42,13 +42,13 @@ int setup(char** argv)
 		printf("%s\n", line);
 		if (figure_counter == 0)
 		{
-			tetromin_head = create_tetrimino(line, w_count(line), h_count(line));
+			tetromin_head = create_tetrimino(line);
 			first_tetr_arr = create_list(tetromin_head, NULL);
 			previous_tetr = first_tetr_arr;
 		}
 		else
 		{
-			current_tetr = create_list(create_tetrimino(line, w_count(line), h_count(line)), NULL);
+			current_tetr = create_list(create_tetrimino(line), NULL);
 			previous_tetr->next = current_tetr;
 			previous_tetr = current_tetr;
 		}
@@ -56,7 +56,7 @@ int setup(char** argv)
 	}
 	printf("File and figures inside are valid\n\n");
 	printf("%d\n", figure_counter);
-	find_solution(first_tetr_arr, 7); //!!!
+	find_solution(first_tetr_arr, figure_counter); //!!!
 	return (1);
 }
 

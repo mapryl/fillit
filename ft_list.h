@@ -30,12 +30,12 @@ typedef struct
 } s_field;
 
 void find_solution(const s_tetr_list* tetr_arr, int size_arr);
-s_tetromin* create_tetrimino(char* tetromin, int width, int height);
+s_tetromin* create_tetrimino(char* tetromin);
 s_tetr_list* create_list(s_tetromin* head, struct tetr_arr* next);
 int     setup(char** argv);
 int     check_file(char* line);
 int     check_figure(char* line);
-int w_count(char* line);
-int h_count(char* line);
+void w_count(char* line, int *w_arr);
+void h_count(char* line, int *h_arr);
 
 #endif

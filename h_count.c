@@ -1,37 +1,13 @@
-/*#include <stdio.h>
-int h_count(char *line);
-int main(void)
+void h_count(char* line, int *h_arr)
 {
-	printf("%d\n", h_count("..#..\n.#..\n.##.\n...."));
-	return (0);
-}
-*/
-
-int h_count(char* line)
-{
-	int hcount = 0;
-	//int hashmax = 0;
+	//int h_arr[4] = { 0 };
 	int i = 0;
 
-	while (line[i] != '\0')
+	while (line[i])
 	{
-		while (line[i] != '#')
-		{
-			if (line[i] == '\0')
-				return (hcount);
-			i++;
-		}
-		while (line[i] != '\n')
-		{
-			if (line[i] == '\0')
-				return (hcount);
-			i++;
-		}
-		if (line[i] == '\n')
-			hcount++;
-		if (line[i] == '\0')
-			return(hcount);
+		if (line[i] == '#')
+			h_arr[i / 5] = 1;
 		i++;
 	}
-	return(hcount);
+	//return h_arr;
 }

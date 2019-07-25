@@ -1,39 +1,16 @@
 #include "ft_list.h"
-//#include <stdio.h>
+#include <string.h>
 
-/*void wh_count(char *line);
-int main(void)
+void w_count(char* line, int *w_arr)
 {
-	printf("%d\n", w_count("...#\n...#\n...#\n...#"));
-	return (0);
-}
-*/
-
-int w_count(char* line)
-{
-	int wcount = 0;
-	int wcount_max = 0;
-	int hcount = 1;
+	//int w_arr[4] = { 0 };
 	int i = 0;
 
 	while (line[i])
 	{
-		while (line[i] != '#')
-		{
-			if (line[i] == '\n')
-				hcount++;
-			if (line[i] == '\0')
-				return (hcount);
-			i++;
-		}
 		if (line[i] == '#')
-			wcount++;
+			w_arr[i % 5] = 1;
 		i++;
-		if (line[i] == '\n')
-		{
-			wcount_max = wcount;
-			wcount = 0;
-		}
 	}
-	return(wcount_max);
+	//return w_arr;
 }
