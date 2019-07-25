@@ -6,51 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/mflannel/Desktop/Fillit_final/ConsoleApplication1.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-fcntl.h
--
-math.h
--
+/Users/mapryl/Desktop/fillit/ConsoleApplication1.c
 ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
+/Users/mapryl/Desktop/fillit/ft_list.h
 
-/Users/mflannel/Desktop/Fillit_final/create_list.c
-ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
-
-/Users/mflannel/Desktop/Fillit_final/create_tetrimino.c
-ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
-string.h
--
-
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
+/Users/mapryl/Desktop/fillit/ft_list.h
 unistd.h
 -
 stdio.h
 -
 stdlib.h
 -
-fcntl.h
--
-
-/Users/mflannel/Desktop/Fillit_final/main.c
-ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
-fcntl.h
--
-unistd.h
--
-
-/Users/mflannel/Desktop/Fillit_final/w_count.c
-ft_list.h
-/Users/mflannel/Desktop/Fillit_final/ft_list.h
 string.h
+-
+fcntl.h
 -
 

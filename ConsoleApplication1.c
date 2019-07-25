@@ -1,220 +1,181 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-# include <fcntl.h>
-#include <math.h>
-#include "ft_list.h"
+﻿#include "ft_list.h"
 
-
-char* create_dot_str(int size)
+char	*create_dot_str(int size)
 {
-	char* str;
-	
+	char	*str;
+	int		i;
+
+	i = 0;
 	str = (char*)malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	else
 	{
-		for (int i = 0; i < size; i++)
+		while (i < size)
+		{
 			memcpy(str + i, ".", 2);
+			i++;
+		}
 	}
-	return str;
+	return (str);
 }
 
-void field_create(s_field* field, int size)
+void	field_create(s_field* field, int size)
 {
-	/*
-	Создание поля
-	2 маллока
-	Инициализация точками
-	*/
+	int		i;
+
+	i = 0;
 	field->field = (char**)malloc(sizeof(char*) * (size + 1));
 	if (!(field->field))
-		return;
-	for (int i = 0; i < size; i++)
+		return ;
+	while (i < size)
 	{
 		field->field[i] = create_dot_str(size);
+		i++;
 	}
 	field->field[size] = "";
 	field->size = size;
 }
-void field_delete(s_field* field)
+
+void	field_delete(s_field* field)
 {
-	/*
-	Стирание поля в for`е
-	Для очищения перед расширением
-	*/
-	for (int i = 0; i < field->size; i++)
+	int		i;
+
+	i = 0;
+	while (i < field->size)
+	{
 		free(field->field[i]);
+		i++;
+	}
 	free(field->field);
 }
 
-void field_resize(s_field* field, int size)
+void	field_resize(s_field* field, int size)
 {
-	/*
-	Вызов делета, потом креейт
-	*/
 	field_delete(field);
 	field_create(field, size);
 }
 
-int tetr_can_insert(const s_tetromin *tetromin, int y, int x, const s_field *field)
+int		tetr_can_insert(const s_tetromin *tetromin, int y, int x, const s_field *field)
 {
-	/*
-	Проверяем можно ли вставить тетромин
-	Передаем поле, тетромин и позицию где проверить возможность вставки
-	Как только встретили конфликт - возвращаем 0
-	Иначе 1
-	*/
 	if (field->size < x + tetromin->width || field->size < y + tetromin->height)
-		return 0;
+		return (0);
 	for (int i = 0; i < tetromin->height; i++)
 	{
 		for (int j = 0; j < tetromin->width; j++)
 		{
 			if (field->field[i + y][j + x] != '.' && tetromin->form[i * tetromin->width + j] != '.')
-				return 0;
+				return (0);
 		}
 	}
-	return 1;
+	return (1);
 }
 
 void tetr_insert(const s_tetromin* tetromin, int y, int x, s_field* field)
 {
-	/*
-	Вставляем тетромин
-	*/
-	char symb;
+	char	symb;
+	int		i;
+	int		j;
 
-	for (int i = 0; i < tetromin->height; i++)
+	i = 0;
+	while (i < tetromin->height)
 	{
-		for (int j = 0; j < tetromin->width; j++)
+		j = 0;
+		while (j < tetromin->width)
 		{
 			symb = tetromin->form[i * tetromin->width + j];
 			if (symb != '.')
 				field->field[i + y][j + x] = symb;
+			j++;
 		}
+		i++;
 	}
 }
 
-void tetr_erase(const s_tetromin* tetromin, int y, int x, s_field* field)
+void	tetr_erase(const s_tetromin* tetromin, int y, int x, s_field* field)
 {
-	/*
-	Удаляем тетромин
-	*/
-	for (int i = 0; i < tetromin->height; i++)
-		for (int j = 0; j < tetromin->width; j++)
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < tetromin->height)
+	{
+		j = 0;
+		while (j < tetromin->width)
 		{
 			if (tetromin->form[i * tetromin->width + j] != '.')
 				field->field[i + y][j + x] = '.';
-			else
-				continue;
+			j++;
 		}
-}
-
-void field_print(const s_field *field)
-{
-	for (int i = 0; i < field->size; i++)
-	{
-		for (int j = 0; j < field->size; j++)
-			printf("%c", field->field[i][j]);
-		printf("\n");
+		i++;
 	}
 }
 
-int try_solve(s_field *field, const s_tetr_list *tetr_arr)
+void	field_print(const s_field *field)
 {
-	if (tetr_arr == NULL)
-		return 1;
-	for (int i = 0; i < field->size; i++)
+	int		i;
+	int		j;
+
+	i = 0;
+	while (++i < field->size)
 	{
-		for (int j = 0; j < field->size; j++)
+		j = 0;
+		while (++j < field->size)
+			write(1, &field->field[i][j], 1);
+		write(1, "\n", 1);
+	}
+}
+
+int		try_solve(s_field *field, const s_tetr_list *tetr_arr)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	if (tetr_arr == NULL)
+		return (1);
+	while (i < field->size)
+	{
+		j = 0;
+		while (j < field->size)
 		{
 			if (tetr_can_insert(&tetr_arr->tetromin_data, i, j, field) == 1)
 			{
 				tetr_insert(&tetr_arr->tetromin_data, i, j, field);
 				if (try_solve(field, tetr_arr->next) == 1)
-					return 1;
+					return (1);
 				else
 				{
 					tetr_erase(&tetr_arr->tetromin_data, i, j, field);
-					continue;
+					j++;
 				}
 			}
 			else
-				continue;
+				j++;
 		}
+		i++;
 	}
-	return 0;
+	return (0);
 }
 
-double find_sqrt(int num)
+double	find_sqrt(int num)
 {
-	double g = 1;
+	double	g;
+
+	g = 1;
 	while ((int)(g * g) != num)
-	{
 		g = (g + num / g) / 2;
-	}
-	return g;
+	return (g);
 }
 
-void find_solution(const s_tetr_list *tetr_arr, int size_arr)
+void	find_solution(const s_tetr_list *tetr_arr, int size_arr)
 {
-	s_field field;
-	int size = find_sqrt(size_arr * 4);
+	s_field	field;
+	int		size;
+
+	size = (int)find_sqrt(size_arr * 4);
 	field_create(&field, size);
 	while (try_solve(&field, tetr_arr) == 0)
-	{
 		field_resize(&field, ++size);
-	}
 	field_print(&field);
 }
-
-/*
-В файнд солюшон задаем поле. Вызываем функцию трай солв. 
-Если она возвращает один. Значит нашли решение, выводим это поле.
-Если возвращает ноль, значит увеличиваем поле на единичку и снова вызываем трай солв.
-
-Трай солв
-Принимает на вход икс и игрек текущие (куда будет ставить фигурку)
-и односвязный список тетроминов.
-Проверяем если дошли до НулЪ, значит нашли решение и ретерн 1
-Цикл по иск и игрек пока не вылезли за границы, пытаемся поставить текущую фигурку
-Если не получается - прибавляем икс и игрек (не одновременно).
-Если вышли за границы (некуда ставить) ретурним 0
-Если поставили - вызываем сами себя от следующей фигуры и х + 1.
-
-Смотрим результат от самовызова 
-Если результат 1, то ретурн 1
-Если результат 0, то продолжаем ставить себя (откатываем себя)
-
-Создать структуру (односвязный список), которая будет хранить с_тетромино
-*/
-/*
-int main(void)
-{
-//	printf("begin");
-	//char a = 'a';
-	//printf("%c", a);
-	s_tetromin tetromin1 = { "AAAA", 1, 4 };
-	s_tetromin tetromin2 = { "BBBB", 4, 1 };
-	s_tetromin tetromin3 = { "CCC..C", 3, 2 };
-	s_tetromin tetromin4 = { ".DDDD.", 3, 2 };
-	s_tetromin tetromin5 = { "EEEE", 2, 2 };
-	s_tetromin tetromin6 = { "FF..FF", 3, 2 };
-	s_tetromin tetromin7 = { "GG.G.G", 2, 3 };
-	s_tetromin tetromin8 = { "HHH.H.", 3, 2 };
-	
-	s_tetr_arr tetr8 = { tetromin8, NULL };
-	s_tetr_arr tetr7 = { tetromin7, &tetr8 };
-	s_tetr_arr tetr6 = { tetromin6, &tetr7 };
-	s_tetr_arr tetr5 = { tetromin5, &tetr6 };
-	s_tetr_arr tetr4 = { tetromin4, &tetr5 };
-	s_tetr_arr tetr3 = { tetromin3, &tetr4 };
-	s_tetr_arr tetr2 = { tetromin2, &tetr3 };
-	s_tetr_arr tetr1 = { tetromin1, &tetr2 };
-	find_solution(&tetr1, 8);
-
-	return 0;
-}
-*/
