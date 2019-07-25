@@ -1,4 +1,5 @@
-#include "ft_list.h"
+#include "tetr_list.h"
+#include <stdlib.h>
 
 s_tetr_list* create_list(s_tetromin* head, s_tetr_list* next)
 {

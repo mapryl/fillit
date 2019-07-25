@@ -1,4 +1,61 @@
-#include "ft_list.h"
+#include "validation.h"
+#include "tetromino.h"
+#include "tetr_list.h"
+#include "find_solution.h"
+#include <fcntl.h>
+#include <stdlib.h>
+#include <io.h> //WINDA
+
+#include <stdio.h> //DELETE
+
+int             check_file(char* line)
+{
+	int i = 0; //счетчик
+	int hcount = 0; //#
+	int ncount = 0; //\n
+	int dcount = 0; //.
+
+	while (line[i] != '\0')
+	{
+		if (line[i] == '#')
+			hcount++;
+		else if (line[i] == '.')
+			dcount++;
+		else if (line[i] == '\n')
+			ncount++;
+		i++;
+	}
+	if (hcount != 4 || dcount != 12 || ncount > 5) //любая валидная фигура включает в себя ...
+		return (0);
+	return (1);
+}
+
+int check_figure(char* line)
+{
+	int touch = 0; //количество касаний
+	int hcount = 0; //количество проверенных шарпов
+	int i = 0; //счетчик
+	while (hcount < 4)
+	{
+		while (line[i] != '#')
+			i++;
+		if (line[i + 1] == '#')
+			touch++;
+		if (line[i - 1] == '#')
+			touch++;
+		if (line[i + 5] == '#')
+			touch++;
+		if (line[i - 5] == '#')
+			touch++;
+		hcount++;
+		i++;
+	}
+	printf("Number of touches: %d\n", touch); //Вывод "касаний"
+	if (touch == 6 || touch == 8)
+		return (1);
+	else
+		return (0);
+}
 
 int setup(char** argv)
 {
@@ -42,13 +99,13 @@ int setup(char** argv)
 		printf("%s\n", line);
 		if (figure_counter == 0)
 		{
-			tetromin_head = create_tetrimino(line);
+			tetromin_head = create_tetrimino(line, figure_counter);
 			first_tetr_arr = create_list(tetromin_head, NULL);
 			previous_tetr = first_tetr_arr;
 		}
 		else
 		{
-			current_tetr = create_list(create_tetrimino(line), NULL);
+			current_tetr = create_list(create_tetrimino(line, figure_counter), NULL);
 			previous_tetr->next = current_tetr;
 			previous_tetr = current_tetr;
 		}
