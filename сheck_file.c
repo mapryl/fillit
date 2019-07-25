@@ -1,6 +1,6 @@
 int             check_file(char* line)
 {
-	int i = 0; //ñ÷åò÷èê
+	int i = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int hcount = 0; //#
 	int ncount = 0; //\n
 	int dcount = 0; //.
@@ -15,7 +15,7 @@ int             check_file(char* line)
 			ncount++;
 		i++;
 	}
-	if (hcount != 4 || dcount != 12 || ncount > 5) //ëşáàÿ âàëèäíàÿ ôèãóğà âêëş÷àåò â ñåáÿ ...
+	if (hcount != 4 || dcount != 12 || ncount > 5)
 		return (0);
 	return (1);
 }
