@@ -1,7 +1,8 @@
 ﻿#include "find_solution.h"
+#include "field.h"
 #include <stdlib.h>
 
-int		try_solve(s_field * field, const s_tetr_list * tetr_arr)
+int		try_solve(t_field * field, const t_tetr_list * tetr_arr)
 {
 	int		i;
 	int		j;
@@ -40,9 +41,9 @@ double	find_sqrt(int num)
 	return (g);
 }
 
-void	find_solution(const s_tetr_list * tetr_arr, int size_arr)
+void	find_solution(const t_tetr_list * tetr_arr, int size_arr)
 {
-	s_field	field;
+	t_field	field;
 	int		size;
 
 	size = (int)find_sqrt(size_arr * 4);

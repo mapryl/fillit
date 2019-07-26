@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tetr_list.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/26 13:27:31 by mflannel          #+#    #+#             */
+/*   Updated: 2019/07/26 14:15:27 by mflannel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TETR_LIST_H
-#   define TETR_LIST_H
+# define TETR_LIST_H
 
-#include "tetromino.h"
+# include "tetromino.h"
 
-typedef struct tetr_list
+typedef struct			s_tetr_list
 {
-	s_tetromin tetromin_data;
-	struct tetr_list* next;
-} s_tetr_list;
+	t_tetromin			tetromin_data;
+	struct s_tetr_list	*next;
+}						t_tetr_list;
 
-s_tetr_list* create_list(s_tetromin* head, s_tetr_list* next);
+t_tetr_list				*create_list(t_tetromin *head, t_tetr_list *next);
 
 #endif

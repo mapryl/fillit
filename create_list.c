@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_list.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/26 12:36:36 by mflannel          #+#    #+#             */
+/*   Updated: 2019/07/26 14:13:50 by mflannel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "tetr_list.h"
 #include <stdlib.h>
-#include "ft_list.h"
 
-s_tetr_list		*create_list(s_tetromin *head, s_tetr_list *next)
+t_tetr_list		*create_list(t_tetromin *head, struct s_tetr_list *next)
 {
-	s_tetr_list *tmp;
+	struct s_tetr_list *tmp;
 
-	tmp = (s_tetr_list*)malloc(sizeof(s_tetr_list));
+	tmp = (t_tetr_list*)malloc(sizeof(t_tetr_list));
 	tmp->tetromin_data = *head;
 	tmp->next = next;
 	return (tmp);

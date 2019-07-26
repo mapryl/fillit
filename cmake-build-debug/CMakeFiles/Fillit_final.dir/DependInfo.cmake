@@ -4,14 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/mapryl/Desktop/fillit/ConsoleApplication1.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/ConsoleApplication1.c.o"
-  "/Users/mapryl/Desktop/fillit/check_figure.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/check_figure.c.o"
-  "/Users/mapryl/Desktop/fillit/create_list.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/create_list.c.o"
-  "/Users/mapryl/Desktop/fillit/create_tetrimino.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/create_tetrimino.c.o"
-  "/Users/mapryl/Desktop/fillit/h_count.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/h_count.c.o"
-  "/Users/mapryl/Desktop/fillit/main.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/main.c.o"
-  "/Users/mapryl/Desktop/fillit/w_count.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/w_count.c.o"
-  "/Users/mapryl/Desktop/fillit/сheck_file.c" "/Users/mapryl/Desktop/fillit/cmake-build-debug/CMakeFiles/Fillit_final.dir/сheck_file.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/create_list.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/create_list.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/field.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/field.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/find_solution.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/find_solution.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/tetromino.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/tetromino.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/validation.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/validation.c.o"
+  "/Users/mflannel/Desktop/Fillit_final/w_h_counter.c" "/Users/mflannel/Desktop/Fillit_final/cmake-build-debug/CMakeFiles/Fillit_final.dir/w_h_counter.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

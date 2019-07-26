@@ -3,14 +3,14 @@
 #include "tetr_list.h"
 #include "find_solution.h"
 #include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <io.h> //WINDA
-
-#include <stdio.h> //DELETE
 
 int             check_file(char* line)
 {
-	int i = 0; //счетчик
+	int i = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	int hcount = 0; //#
 	int ncount = 0; //\n
 	int dcount = 0; //.
@@ -25,16 +25,16 @@ int             check_file(char* line)
 			ncount++;
 		i++;
 	}
-	if (hcount != 4 || dcount != 12 || ncount > 5) //любая валидная фигура включает в себя ...
+	if (hcount != 4 || dcount != 12 || ncount > 5) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ ...
 		return (0);
 	return (1);
 }
 
 int check_figure(char* line)
 {
-	int touch = 0; //количество касаний
-	int hcount = 0; //количество проверенных шарпов
-	int i = 0; //счетчик
+	int touch = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	int hcount = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	int i = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	while (hcount < 4)
 	{
 		while (line[i] != '#')
@@ -50,7 +50,7 @@ int check_figure(char* line)
 		hcount++;
 		i++;
 	}
-	printf("Number of touches: %d\n", touch); //Вывод "касаний"
+	printf("Number of touches: %d\n", touch); //пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 	if (touch == 6 || touch == 8)
 		return (1);
 	else
@@ -61,23 +61,22 @@ int setup(char** argv)
 {
 	int fd;
 	int rd;
-	char line[BUFF_SIZE];
+	char *line;
 	int figure_counter = 0;
-	s_tetromin* tetromin_head;
-	s_tetr_list* first_tetr_arr = 0;
-	s_tetr_list* current_tetr = 0;
-	s_tetr_list* previous_tetr = 0;
+	t_tetromin* tetromin_head;
+	t_tetr_list* first_tetr_arr = 0;
+	t_tetr_list* current_tetr = 0;
+	t_tetr_list* previous_tetr = 0;
 
-
-	//line = ((char*)malloc(sizeof(char) * BUFF_SIZE + 1));
-	int error = _sopen_s(&fd, argv[1], _O_RDONLY, _SH_DENYNO, 0);
-	if (fd <= -1 || _read(fd, line, 0) == -1)
+	line = ((char*)malloc(sizeof(char) * BUFF_SIZE + 1));
+	fd = open(argv[1], O_RDONLY);
+	if (fd <= -1 /*|| fd == -1*/)
 		return -1;
-	while ((rd = _read(fd, line, BUFF_SIZE)) > 0)
+	while ((rd = read(fd, line, BUFF_SIZE)) > 0)
 	{
 		line[rd] = '\0';
-		//Провряем файл и фигуры на валидность
-		int i = check_file(line); //проверяем файл на валидность
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		int i = check_file(line); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (i != 1)
 		{
 			printf("This part of file is NOT VALID:\n");
@@ -87,7 +86,7 @@ int setup(char** argv)
 		}
 		printf("This part of file is VALID (1Y/0N): %d. Continue.\n", i);
 
-		i = check_figure(line); //проверяем фигуры на валидность
+		i = check_figure(line); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (i != 1)
 		{
 			printf("This figure is NOT VALID. Number of touches is good (1Y/0N): %d\n.", i);
