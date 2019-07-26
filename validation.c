@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 15:22:07 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/26 18:35:00 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/26 19:12:13 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "find_solution.h"
 #include <fcntl.h>
 #include <unistd.h>
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 int		check_file(char *line)
@@ -81,7 +79,7 @@ int		check_figure(char *line)
 	return (touch_validate(touch));
 }
 
-int check_all(char *line)
+int		check_all(char *line)
 {
 	if (!check_file(line))
 		return (0);
@@ -90,19 +88,19 @@ int check_all(char *line)
 	return (1);
 }
 
-int     creation(int fd, int *figure_counter, 	t_tetr_list	**first_tetr_arr)
+int		creation(int fd, int *figure_counter, t_tetr_list **first_tetr_arr)
 {
 	t_tetromin	*tetromin_head;
 	t_tetr_list	*current_tetr;
 	t_tetr_list	*previous_tetr;
-	int rd;
-	char *line;
+	int			rd;
+	char		*line;
 
 	line = ((char*)malloc(sizeof(char) * BUFF_SIZE + 1));
 	while ((rd = read(fd, line, BUFF_SIZE)) > 0)
 	{
 		line[rd] = '\0';
-		if(!check_all(line))
+		if (!check_all(line))
 			return (0);
 		if (*figure_counter == 0)
 		{
@@ -119,7 +117,7 @@ int     creation(int fd, int *figure_counter, 	t_tetr_list	**first_tetr_arr)
 		}
 		(*figure_counter)++;
 	}
-	return(1);
+	return (1);
 }
 
 int		setup(char **argv)
@@ -132,7 +130,7 @@ int		setup(char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if ((fd <= -1))
 		return (-1);
-	if(!creation(fd, &figure_counter, &first_tetr_arr))
+	if (!creation(fd, &figure_counter, &first_tetr_arr))
 		return (0);
 	find_solution(first_tetr_arr, figure_counter);
 	return (1);
@@ -146,3 +144,4 @@ int		main(int argc, char **argv)
 		return (-1);
 	return (0);
 }
+
