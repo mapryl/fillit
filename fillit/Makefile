@@ -6,16 +6,16 @@
 #    By: mapryl <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/26 15:33:31 by mapryl            #+#    #+#              #
-#    Updated: 2019/07/26 16:56:11 by mapryl           ###   ########.fr        #
+#    Updated: 2019/07/26 18:06:37 by mapryl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: clean fclean re make all
 
-NAME = fillit_l
+NAME = fillit
 
-SRC_PATH = ./fillit/
-HEAD_PATH = ./fillit/
+SRC_PATH = ./
+HEAD_PATH = ./
 LIB_PATH = ./libft/
 
 SRC_FILES = create_list.c field.c find_solution.c tetromino.c validation.c \
@@ -35,16 +35,21 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): lib $(OBJS)
+	$(CC) $(FLAGS) -o$(NAME) $(OBJS) -L $(LIB_PATH) -lft
+
+$(OBJS):
+	$(CC) $(FLAGS) -c $(SRCS) -I$(HEAD_PATH) -I$(LIB_PATH)
+
+lib:
 	@make -C $(LIB_PATH) re
-	$(CC) $(FLAGS) -L $(LIB_PATH) -lft $(SRCS) -I$(HEAD_PATH) -I$(LIB_PATH) -o $(NAME)
 
 clean:
-	/bin/rm $(OBJS)
+	/bin/rm -rf $(OBJS)
 	@make -C $(LIB_PATH) clean
 
 fclean: clean
-	/bin/rm $(NAME)
-	@make -C $(LIBFT_PATH) fclean
+	/bin/rm -rf $(NAME)
+	@make -C $(LIB_PATH) fclean
 
 re: fclean all
