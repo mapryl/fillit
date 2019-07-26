@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 15:22:07 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/26 19:12:13 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/26 19:21:27 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ int		check_file(char *line)
 		i++;
 	}
 	if (hcount != 4 || dcount != 12 || ncount > 5)
-		return (0);
+	{
+		write(1, "error\n", 7);
+		exit(1);
+	}
 	return (1);
 }
 
@@ -49,7 +52,10 @@ int		touch_validate(int touch)
 	if (touch == 6 || touch == 8)
 		return (1);
 	else
-		return (0);
+		{
+		write(1, "error\n", 7);
+		exit(1);
+		}
 }
 
 int		check_figure(char *line)

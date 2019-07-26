@@ -6,7 +6,7 @@
 #    By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/30 13:24:44 by mapryl            #+#    #+#              #
-#    Updated: 2019/07/26 16:05:59 by mapryl           ###   ########.fr        #
+#    Updated: 2019/07/26 19:41:01 by mflannel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ OBJS = $(SRC_FILES:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	@gcc -c $(SRCS) -I$(HEAD_PATH) $(FLAGS)
+	@gcc -c $(SRCS) -I $(HEAD_PATH) $(FLAGS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
