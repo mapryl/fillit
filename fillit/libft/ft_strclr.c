@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 17:11:33 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:11:57 by mapryl           ###   ########.fr       */
+/*   Created: 2019/04/29 10:42:42 by mapryl            #+#    #+#             */
+/*   Updated: 2019/05/04 17:19:05 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
-# define BUFF_SIZE 21
+#include "libft.h"
 
-int		check_file(char *line);
-int		check_figure(char *line);
-int		setup(char **argv);
-
-#endif
+void	ft_strclr(char *s)
+{
+	if (s)
+		ft_bzero(s, ft_strlen(s));
+}

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 17:11:33 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:11:57 by mapryl           ###   ########.fr       */
+/*   Created: 2019/04/03 16:00:40 by mapryl            #+#    #+#             */
+/*   Updated: 2019/05/04 16:55:35 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
-# define BUFF_SIZE 21
+#include "libft.h"
 
-int		check_file(char *line);
-int		check_figure(char *line);
-int		setup(char **argv);
-
-#endif
+int		ft_isalpha(int c)
+{
+	return (ft_islower(c) || ft_isupper(c));
+}

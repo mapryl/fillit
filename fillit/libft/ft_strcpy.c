@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 17:11:33 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:11:57 by mapryl           ###   ########.fr       */
+/*   Created: 2019/04/03 19:43:19 by mapryl            #+#    #+#             */
+/*   Updated: 2019/05/04 17:38:16 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
-# define BUFF_SIZE 21
+#include "libft.h"
 
-int		check_file(char *line);
-int		check_figure(char *line);
-int		setup(char **argv);
+char	*ft_strcpy(char *dst, const char *src)
+{
+	size_t i;
 
-#endif
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}

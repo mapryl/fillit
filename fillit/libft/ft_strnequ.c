@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 17:11:33 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:11:57 by mapryl           ###   ########.fr       */
+/*   Created: 2019/04/29 10:46:25 by mapryl            #+#    #+#             */
+/*   Updated: 2019/05/04 17:29:19 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
-# define BUFF_SIZE 21
+#include "libft.h"
 
-int		check_file(char *line);
-int		check_figure(char *line);
-int		setup(char **argv);
-
-#endif
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
+{
+	if (!s1 || !s2)
+		return (0);
+	return (ft_strncmp(s1, s2, n) ? 0 : 1);
+}

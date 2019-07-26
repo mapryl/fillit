@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mapryl <mapryl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 17:11:33 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:11:57 by mapryl           ###   ########.fr       */
+/*   Created: 2019/04/29 10:42:25 by mapryl            #+#    #+#             */
+/*   Updated: 2019/05/04 17:37:34 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
-# define BUFF_SIZE 21
+#include "libft.h"
 
-int		check_file(char *line);
-int		check_figure(char *line);
-int		setup(char **argv);
-
-#endif
+void	ft_putstr_fd(char const *s, int fd)
+{
+	if (s)
+		write(fd, s, ft_strlen(s));
+}
