@@ -35,13 +35,13 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): lib $(OBJS)
+$(NAME): $(LIB_NAME) $(OBJS)
 	$(CC) $(FLAGS) -o$(NAME) $(OBJS) -L $(LIB_PATH) -lft
 
 $(OBJS):
 	$(CC) $(FLAGS) -c $(SRCS) -I$(HEAD_PATH) -I$(LIB_PATH)
 
-lib:
+$(LIB_NAME):
 	@make -C $(LIB_PATH) re
 
 clean:
