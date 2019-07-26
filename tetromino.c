@@ -39,7 +39,7 @@ char		*to_letter(char *line, int w_arr[], int h_arr[])
 	return (new_line);
 }
 
-t_tetromin	*create_tetrimino(char *tetromin, int figure_counter)
+t_tetromin	*cr_tet(char *tetromin, int figure_counter)
 {
 	t_tetromin *tetromin_head;
 	int w_arr[5] = { 0 };
