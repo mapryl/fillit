@@ -6,13 +6,14 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 13:47:56 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/26 14:18:36 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/26 18:57:06 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tetromino.h"
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 char		*to_letter(char *line, int w_arr[], int h_arr[])
 {
@@ -20,6 +21,11 @@ char		*to_letter(char *line, int w_arr[], int h_arr[])
 	int		j;
 	char	*new_line;
 
+	if(line[0] == '\n')
+	{
+		write(1, "error \n", 7);
+		exit(1);
+	}
 	i = 0;
 	j = 0;
 	new_line = (char *)malloc(sizeof(char) * w_arr[4] * h_arr[4] + 1);

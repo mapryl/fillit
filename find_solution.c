@@ -1,4 +1,4 @@
-﻿#include "find_solution.h"
+#include "find_solution.h"
 #include "field.h"
 #include <stdlib.h>
 
@@ -52,3 +52,4 @@ void	find_solution(const t_tetr_list * tetr_arr, int size_arr)
 		field_resize(&field, ++size);
 	field_print(&field);
 }
+
